@@ -8,9 +8,13 @@ package
 		public var player:Player = new Player(stage);
 		
 		public var aloitus:AloitusNakyma;
-		public var peli:PeliNakyma;
-		public var piha:Piha;
 		public var kauppa:Kauppa;
+		public var keittio:Keittio;
+		public var olohuone:Olohuone;
+		public var piha:Piha;
+		public var pihaJatkuu:PihaJatkuu;
+		public var tyypinHuone:TyypinHuone;
+		public var vessa:Vessa;
 		
 		public function Engine()
 		{
@@ -24,39 +28,34 @@ package
 		public function naytaAloitusNakyma()
 		{
 			aloitus = new AloitusNakyma(this);
-			if(peli){
-				removeChild(peli);
-				peli = null;
+			if(olohuone){
+				removeChild(olohuone);
+				olohuone = null;
 			}
 			addChild(aloitus);
 		}
 		
 		public function naytaPeliNakyma()
 		{
-			peli = new PeliNakyma(stage, this);
+			olohuone = new Olohuone(stage, this);
 			if(aloitus){
 				removeChild(aloitus);
 				aloitus = null;
 			}
-			addChild(peli)
-			addChild(player);
-			player.x = stage.stageWidth / 2;
-			player.y = stage.stageHeight / 2;
+			addChild(olohuone)
+			setPlayer();
 		}
 		
 		public function siirryUlos()
 		{
 			piha = new Piha(stage, this);
-			if(peli)
+			if(olohuone)
 			{
-				removeChild(peli);
+				removeChild(olohuone);
 				//peli = null;
 			}
 			addChild(piha);
-			//this.setChildIndex(player, this.numChildren - 1); // Tällä saadaan pelaaja päällimmäiseksi, muuten se jää myDoor2 ja myTomaatti alapuolelle
-			addChild(player);
-			player.x = stage.stageWidth / 2;
-			player.y = stage.stageHeight / 2;
+			setPlayer();
 		}
 		
 		public function siirryKauppaan()
@@ -68,6 +67,12 @@ package
 				//piha = null;
 			}
 			addChild(kauppa);
+			setPlayer();
+		}
+		
+		
+		public function setPlayer():void
+		{
 			addChild(player);
 			player.x = stage.stageWidth / 2;
 			player.y = stage.stageHeight / 2;

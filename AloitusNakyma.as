@@ -1,6 +1,6 @@
 package
 {
-	import PeliNakyma;
+	import Olohuone;
 	import Engine;
 	import flash.display.MovieClip;
 	import flash.display.SimpleButton;
