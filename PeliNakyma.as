@@ -4,7 +4,11 @@ package
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
+	import flash.display.SimpleButton;
+	import flash.events.MouseEvent;
 	import flash.ui.Keyboard;
+	import KeyObject;
+	import Engine;
 	
 	public class PeliNakyma extends MovieClip
 	{
@@ -13,13 +17,16 @@ package
 		
 		var xSpeed:int = 10;
 		var scrollX:int = 0;
-		var scrollXPlayer:int = 186;
 		var speedConstant:int = 20; 
 		var friction:Number = 0.75;
 		var maxSpeedConstant:Number = 20;
 		
-		public function PeliNakyma(stage:Stage)
+		var mainClass:Engine;
+		
+		public function PeliNakyma(stage:Stage, passedClass:Engine)
 		{
+			mainClass = passedClass;
+			
 			//create an object of our ship from the Ship class
 			var player:Player = new Player(stage);
 			//add it to the display list
@@ -29,7 +36,9 @@ package
 			
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler); // Tarkistaa painetaanko näppäintä parhaillaan
 			stage.addEventListener(KeyboardEvent.KEY_UP, keyUpHandler); // Tarkistaa että näppäintä ei parhaillaan paineta
-			stage.addEventListener(Event.ENTER_FRAME, loop); // Toistetaan joka fps
+			stage.addEventListener(Event.ENTER_FRAME, loop);
+			
+			ulkoOvi.addEventListener(MouseEvent.CLICK, ulkoOviPainettu)
 		}
 		
 		function loop(e:Event):void
@@ -46,17 +55,16 @@ package
 			
 			xSpeed *= friction;
 			scrollX -= xSpeed;
-			scrollXPlayer += xSpeed;
 			this.x = scrollX;
 			
 			if(Math.abs(xSpeed) < 0.5)
 				xSpeed = 0;	
 			
 			// rajat joissa tausta liikkuu
-			if(scrollX > -15)
-				scrollX = -15;
-			else if (scrollX < -2180)
-				scrollX = -2180;				
+			if(scrollX > 0)
+				scrollX = 0;
+			else if (scrollX < -730)
+				scrollX = -730;		
 		}
 		
 		function keyDownHandler(e:KeyboardEvent):void 	// Tarkistaa painetaanko näppäintä parhaillaan
@@ -73,6 +81,12 @@ package
 				leftPressed = false;
 			if(e.keyCode == Keyboard.RIGHT)
 				rightPressed = false;
+		}
+		
+		
+		public function ulkoOviPainettu(event:MouseEvent)
+		{
+			mainClass.siirryUlos();
 		}
 	}
 }
