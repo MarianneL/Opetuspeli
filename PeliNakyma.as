@@ -1,14 +1,14 @@
 package
 {
+	import Engine;
+	import KeyObject;
 	import flash.display.MovieClip;
+	import flash.display.SimpleButton;
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
-	import flash.display.SimpleButton;
 	import flash.events.MouseEvent;
 	import flash.ui.Keyboard;
-	import KeyObject;
-	import Engine;
 	
 	public class PeliNakyma extends MovieClip
 	{
@@ -26,13 +26,6 @@ package
 		public function PeliNakyma(stage:Stage, passedClass:Engine)
 		{
 			mainClass = passedClass;
-			
-			//create an object of our ship from the Ship class
-			var player:Player = new Player(stage);
-			//add it to the display list
-			stage.addChild(player);
-			player.x = stage.stageWidth / 2;
-			player.y = stage.stageHeight / 2;
 			
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler); // Tarkistaa painetaanko näppäintä parhaillaan
 			stage.addEventListener(KeyboardEvent.KEY_UP, keyUpHandler); // Tarkistaa että näppäintä ei parhaillaan paineta
@@ -69,17 +62,17 @@ package
 		
 		function keyDownHandler(e:KeyboardEvent):void 	// Tarkistaa painetaanko näppäintä parhaillaan
 		{
-			if(e.keyCode == Keyboard.LEFT)
+			if(e.keyCode == Keyboard.LEFT || e.keyCode == Keyboard.A)
 				leftPressed = true;
-			if(e.keyCode == Keyboard.RIGHT)
+			if(e.keyCode == Keyboard.RIGHT || e.keyCode == Keyboard.D)
 				rightPressed = true;
 		}
 		
 		function keyUpHandler(e:KeyboardEvent):void 	// Tarkistaa että näppäintä ei parhaillaan paineta		
 		{
-			if(e.keyCode == Keyboard.LEFT)
+			if(e.keyCode == Keyboard.LEFT || e.keyCode == Keyboard.A)
 				leftPressed = false;
-			if(e.keyCode == Keyboard.RIGHT)
+			if(e.keyCode == Keyboard.RIGHT || e.keyCode == Keyboard.D)
 				rightPressed = false;
 		}
 		

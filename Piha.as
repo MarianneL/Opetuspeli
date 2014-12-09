@@ -24,16 +24,7 @@ package
 		
 		public function Piha(stage:Stage, passedClass:Engine)
 		{
-			mainClass = passedClass;
-			
-			//create an object of our ship from the Ship class
-			//var player:Player;
-			//player = new Player(stage);
-			//add it to the display list
-			//stage.addChild(player);
-			//player.x = stage.stageWidth / 2;
-			//player.y = stage.stageHeight / 2;
-			
+			mainClass = passedClass;	
 			
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDownHandler); // Tarkistaa painetaanko näppäintä parhaillaan
 			stage.addEventListener(KeyboardEvent.KEY_UP, keyUpHandler); // Tarkistaa että näppäintä ei parhaillaan paineta
