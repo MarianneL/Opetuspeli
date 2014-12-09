@@ -53,25 +53,25 @@ package
 				xSpeed = 0;	
 			
 			// rajat joissa tausta liikkuu
-			if(scrollX > 0)
-				scrollX = 0;
+			if(scrollX > 50)
+				scrollX = 50;
 			else if (scrollX < -1850)
 				scrollX = -1850;				
 		}
 		
 		function keyDownHandler(e:KeyboardEvent):void 	// Tarkistaa painetaanko näppäintä parhaillaan
 		{
-			if(e.keyCode == Keyboard.LEFT)
+			if(e.keyCode == Keyboard.LEFT || e.keyCode == Keyboard.A)
 				leftPressed = true;
-			if(e.keyCode == Keyboard.RIGHT)
+			if(e.keyCode == Keyboard.RIGHT || e.keyCode == Keyboard.D)
 				rightPressed = true;
 		}
 		
 		function keyUpHandler(e:KeyboardEvent):void 	// Tarkistaa että näppäintä ei parhaillaan paineta		
 		{
-			if(e.keyCode == Keyboard.LEFT)
+			if(e.keyCode == Keyboard.LEFT || e.keyCode == Keyboard.A)
 				leftPressed = false;
-			if(e.keyCode == Keyboard.RIGHT)
+			if(e.keyCode == Keyboard.RIGHT || e.keyCode == Keyboard.D)
 				rightPressed = false;
 		}
 		
