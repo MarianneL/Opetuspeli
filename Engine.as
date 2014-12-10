@@ -16,6 +16,8 @@ package
 		public var tyypinHuone:TyypinHuone;
 		public var vessa:Vessa;
 		
+		public var juttu:Juttu;
+		
 		public function Engine()
 		{
 			// ensimmäisenä näytetään menu (se "haetaan" tällä funktiolla)
@@ -35,8 +37,11 @@ package
 			addChild(aloitus);
 		}
 		
-		public function naytaPeliNakyma()
+		public function naytaPeliNakyma(/*Toimiiko jos tässä esim playerX, playerY...*/)
 		{
+			/*...Ja täällä määritellään playerX ja -Y riippuen mistä tänne tullaan,
+			esim eri arvot kun tullaan pihalta tai jostain huoneesta?*/
+			
 			olohuone = new Olohuone(stage, this);
 			if(aloitus){
 				removeChild(aloitus);
@@ -68,6 +73,28 @@ package
 			}
 			addChild(kauppa);
 			setPlayer();
+		}
+		
+		public function siirryKeittioon()
+		{
+			keittio = new Keittio(stage);
+			if(olohuone)
+			{
+				removeChild(olohuone);
+				//piha = null;
+			}
+			addChild(keittio);
+			setPlayer();
+		}
+		
+		public function teeJuttu()
+		{
+			juttu = new Juttu(stage);
+			if(olohuone)
+			{
+				removeChild(olohuone);
+			}
+			addChild(juttu);
 		}
 		
 		

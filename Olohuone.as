@@ -22,6 +22,7 @@ package
 		var maxSpeedConstant:Number = 20;
 		
 		var mainClass:Engine;
+		var player:Player;
 		
 		public function Olohuone(stage:Stage, passedClass:Engine)
 		{
@@ -32,7 +33,7 @@ package
 			stage.addEventListener(Event.ENTER_FRAME, loop);
 			
 			//napin instance name
-			ulkoOvi.addEventListener(MouseEvent.CLICK, ulkoOviPainettu)
+			ulkoOvi.addEventListener(MouseEvent.CLICK, ulkoOviPainettu);
 		}
 		
 		function loop(e:Event):void
@@ -58,7 +59,8 @@ package
 			if(scrollX > 0)
 				scrollX = 0;
 			else if (scrollX < -730)
-				scrollX = -730;		
+				scrollX = -730;	
+
 		}
 		
 		function keyDownHandler(e:KeyboardEvent):void 	// Tarkistaa painetaanko näppäintä parhaillaan
@@ -80,7 +82,8 @@ package
 		
 		public function ulkoOviPainettu(event:MouseEvent)
 		{
-			mainClass.siirryUlos();
+			mainClass.teeJuttu();
 		}
+		
 	}
 }
