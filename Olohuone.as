@@ -82,6 +82,7 @@ package
 		
 		public function ulkoOviPainettu(event:MouseEvent)
 		{
+			//mainClass.siirryUlos();
 			mainClass.teeJuttu();
 		}
 		

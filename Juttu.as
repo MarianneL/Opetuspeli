@@ -11,9 +11,11 @@ package
 	{
 		var mainClass:Engine;
 		
-		public function Juttu(stage:Stage)
+		public function Juttu(stage:Stage, passedClass:Engine)
 		{
-			//klikkaa.addEventListener(MouseEvent.CLICK, klikattu);
+			mainClass = passedClass;
+			
+			klikkaa.addEventListener(MouseEvent.CLICK, klikattu);
 		}
 		
 		public function klikattu(event:MouseEvent)

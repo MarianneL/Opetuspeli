@@ -24,8 +24,9 @@ package
 			naytaAloitusNakyma();
 		}
 		
-		// Jokaiselle "kentälle" tehdään oma funktio, jolla tuodaan näytölle kyseinen kenttä ja poistetaan edellinen
-		// Niissä tuodaan myös pelaajan ukkeli kentälle oikeaan kohtaan
+		/* Jokaiselle "kentälle" tehdään oma funktio, jolla tuodaan näytölle kyseinen kenttä 
+		ja poistetaan edellinen.
+		Niissä tuodaan myös pelaajan ukkeli kentälle oikeaan kohtaan */
 		
 		public function naytaAloitusNakyma()
 		{
@@ -89,7 +90,7 @@ package
 		
 		public function teeJuttu()
 		{
-			juttu = new Juttu(stage);
+			juttu = new Juttu(stage, this);
 			if(olohuone)
 			{
 				removeChild(olohuone);
@@ -98,6 +99,7 @@ package
 		}
 		
 		
+		// tämä funktio asettaa pelaajan keskelle näyttöä
 		public function setPlayer():void
 		{
 			addChild(player);
