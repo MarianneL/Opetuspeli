@@ -82,8 +82,8 @@ package
 		
 		public function ulkoOviPainettu(event:MouseEvent)
 		{
-			//mainClass.siirryUlos();
-			mainClass.teeJuttu();
+			//mainClass.siirryUlos(); // tästä päästään pihalle :D
+			mainClass.teeJuttu(); // tämä testaa drag and droppia
 		}
 		
 	}

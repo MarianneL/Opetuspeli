@@ -18,10 +18,15 @@ package
 		
 		public var juttu:Juttu;
 		
+		public var scoreHud:ScoreHud;
+		
 		public function Engine()
 		{
 			// ensimmäisenä näytetään menu (se "haetaan" tällä funktiolla)
 			naytaAloitusNakyma();
+			
+			scoreHud = new ScoreHud(stage);
+			stage.addChild(scoreHud);
 		}
 		
 		/* Jokaiselle "kentälle" tehdään oma funktio, jolla tuodaan näytölle kyseinen kenttä 
@@ -105,6 +110,12 @@ package
 			addChild(player);
 			player.x = stage.stageWidth / 2;
 			player.y = stage.stageHeight / 2;
+		}
+		
+		
+		public function updateTheScore():void
+		{
+			scoreHud.updateScore(10);
 		}
 		
 	}

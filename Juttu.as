@@ -1,7 +1,5 @@
 package
 {
-	import Engine;
-	
 	import flash.display.MovieClip;
 	import flash.display.SimpleButton;
 	import flash.display.Stage;
@@ -11,6 +9,7 @@ package
 	public class Juttu extends MovieClip
 	{
 		var mainClass:Engine;
+		var scoreHud:ScoreHud;
 		
 		public function Juttu(stage:Stage, passedClass:Engine)
 		{
@@ -57,6 +56,7 @@ package
 		
 		public function endLevel()
 		{
+			mainClass.updateTheScore();
 			this.gotoAndStop("loppu");
 		}
 	}
