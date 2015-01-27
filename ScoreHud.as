@@ -12,6 +12,9 @@ package
 		
 		public function ScoreHud(stageRef:Stage)
 		{
+			// tämä on alunalkaen pois näkyvistä jotta se ei näy alkunäytöllä
+			this.alpha = 0;
+			
 			this.stageRef = stageRef;
 			
 			score.text = "0";

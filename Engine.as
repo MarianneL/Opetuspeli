@@ -55,6 +55,8 @@ package
 			}
 			addChild(olohuone)
 			setPlayer();
+			// pisteet laitetaan tässä näkyviin, koska ne on piilotettu itse ScoreHudissa
+			scoreHud.alpha = 100;
 		}
 		
 		public function siirryUlos()
@@ -67,6 +69,7 @@ package
 			}
 			addChild(piha);
 			setPlayer();
+			scoreHud.alpha = 100;
 		}
 		
 		public function siirryKauppaan()
@@ -79,6 +82,7 @@ package
 			}
 			addChild(kauppa);
 			setPlayer();
+			scoreHud.alpha = 100;
 		}
 		
 		public function siirryKeittioon()
@@ -91,6 +95,7 @@ package
 			}
 			addChild(keittio);
 			setPlayer();
+			scoreHud.alpha = 100;
 		}
 		
 		public function teeJuttu()
