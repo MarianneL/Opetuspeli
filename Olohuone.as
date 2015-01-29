@@ -32,7 +32,7 @@ package
 			stage.addEventListener(KeyboardEvent.KEY_UP, keyUpHandler); // Tarkistaa että näppäintä ei parhaillaan paineta
 			stage.addEventListener(Event.ENTER_FRAME, loop);
 			
-			//napin instance name
+			// ulkoOvi napin instance name
 			ulkoOvi.addEventListener(MouseEvent.CLICK, ulkoOviPainettu);
 		}
 		
@@ -65,6 +65,7 @@ package
 		
 		function keyDownHandler(e:KeyboardEvent):void 	// Tarkistaa painetaanko näppäintä parhaillaan
 		{
+			// jos painetaan vasenta nuolta tai a-kirjainta, niin leftPressed on silloin tosi, eli ollaan menossa vasemmalle :)
 			if(e.keyCode == Keyboard.LEFT || e.keyCode == Keyboard.A)
 				leftPressed = true;
 			if(e.keyCode == Keyboard.RIGHT || e.keyCode == Keyboard.D)
