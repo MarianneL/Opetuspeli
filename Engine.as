@@ -12,6 +12,8 @@ package
 	{
 		public var player:Player = new Player(stage);
 		
+		// Jokaisella kentällä (ja tehtävällä) on oma luokkansa
+		// Tässä niille annetaan nimet joilla päästään käsiksi kuhunkin luokkaan (tästä luokasta)
 		public var aloitus:AloitusNakyma;
 		public var kauppa:Kauppa;
 		public var keittio:Keittio;
