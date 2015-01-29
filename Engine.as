@@ -1,6 +1,7 @@
 // http://www.emanueleferonato.com/2008/12/17/designing-the-structure-of-a-flash-game-as3-version/
 // Pikkasen vaikeeselkonen, mutta tämän mukaan tää "kentän" vaihtosysteemi on tehty D:
 // https://github.com/haiva/AsGamer-Basics1   <--- tuola Markun tekemä juttu samalla tavalla mut yhtä vaikeeselkosesti ehkä :D
+// voi kattoo selvennyskuvan jos se mitään auttaa :D (yhteisessä kansiossa)
 
 package
 {
