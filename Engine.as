@@ -24,6 +24,7 @@ package
 		public var vessa:Vessa;
 		
 		public var juttu:Juttu;
+		public var automaatti:Pankkiautomaatti;
 		
 		public var scoreHud:ScoreHud;
 		
@@ -117,6 +118,17 @@ package
 				removeChild(olohuone);
 			}
 			addChild(juttu);
+		}
+		
+		
+		public function automaattiTehtava()
+		{
+			automaatti = new Pankkiautomaatti(stage, this);
+			if(olohuone)
+			{
+				removeChild(olohuone);
+			}
+			addChild(automaatti);
 		}
 		
 		
