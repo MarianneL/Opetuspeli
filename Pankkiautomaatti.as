@@ -10,59 +10,89 @@ package
 	{
 		var mainClass:Engine;
 
+		var automaatti1:Automaatti1;
+		var automaatti2:Automaatti2;
+		var automaatti3:Automaatti3;
+		var automaatti4:Automaatti4;
+		var automaatti5:Automaatti5;
+		var automaatti6:Automaatti6;
+		
+		var automaattiClip:String;
 		
 		public function Pankkiautomaatti(stage:Stage, passedClass:Engine)
 		{
 			mainClass = passedClass;
 			
-			this.gotoAndPlay("scene1");
-			
-			//klikkaa.addEventListener(MouseEvent.CLICK, klikattu); 
-			
-			napukka.addEventListener(MouseEvent.CLICK, klikattu);
+			this.x = 0;
+			this.y = 0;
 
+			
+			napukka1.addEventListener(MouseEvent.CLICK, klikattu1);
+		}
+		
+		public function klikattu1(event:MouseEvent)
+		{
+			automaatti2 = new Automaatti2();
+			automaatti2.Jee();
 		}
 		
 		
-
-		public function klikattu(event:MouseEvent)
+		/*public function klikattu(event:MouseEvent)
 		{
-			switch(currentLabel)
+			switch(automaattiClip)
 			{
-				case "scene1":
+				case "automaatti1":
 				{
-					this.gotoAndPlay("scene2");
+					trace("automaatti2");		
+					automaatti2 = new Automaatti2();
+					addChild(automaatti2)
+					automaattiClip = "automaatti2";
 					break;
 				}
-				case "scene2":
+				case "automaatti2":
 				{
-					this.gotoAndPlay("scene3");
+					trace("automaatti3");		
+					automaatti3 = new Automaatti3();
+					removeChild(automaatti2);
+					addChild(automaatti3)
+					automaattiClip = "automaatti3";
 					break;
-				}	
-				case "scene3":
+				}
+				case "automaatti3":
 				{
-					this.gotoAndPlay("scene4");
+					trace("automaatti4");		
+					automaatti4 = new Automaatti4();
+					removeChild(automaatti3);
+					addChild(automaatti4)
+					automaattiClip = "automaatti4";
 					break;
-				}	
-				case "scene4":
+				}
+				case "automaatti4":
 				{
-					this.gotoAndPlay("scene5");
+					trace("automaatti5");		
+					automaatti5 = new Automaatti5();
+					removeChild(automaatti4);
+					addChild(automaatti5)
+					automaattiClip = "automaatti5";
 					break;
-				}	
-				case "scene5":
+				}
+				case "automaatti5":
 				{
-					this.gotoAndPlay("scene6");
+					trace("automaatti6");		
+					automaatti6 = new Automaatti6();
+					removeChild(automaatti5);
+					addChild(automaatti6)
+					automaattiClip = "automaatti6";
 					break;
-				}	
+				}
 				default:
 				{
-					this.gotoAndPlay("scene1");
 					break;
 				}
 			}
-			
-			
-		}
+		}*/
+		
+		
 
 	}
 }
