@@ -6,7 +6,6 @@ package
 	
 	public class Automaatti6 extends MovieClip
 	{
-		var engine:Engine;
 		
 		public function Automaatti6()
 		{
@@ -16,7 +15,7 @@ package
 		
 		public function klikattu(event:MouseEvent)
 		{
-			engine.naytaPeliNakyma();
+			parent.removeChild(this);
 		}
 	}
 }

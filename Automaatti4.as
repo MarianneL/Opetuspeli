@@ -17,6 +17,7 @@ package
 		public function klikattu(event:MouseEvent)
 		{
 			automaatti5 = new Automaatti5();
+			parent.removeChild(this);
 			addChild(automaatti5);
 		}
 	}

@@ -21,6 +21,8 @@ package
 		{
 			mainClass = passedClass;
 			
+			//this.width = 563.8;
+			//this.height = 691.95;
 			this.x = 0;
 			this.y = 0;
 
