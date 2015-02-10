@@ -11,17 +11,11 @@ package
 		public function Automaatti2()
 		{
 			trace("automaatti2");
-			napukka2.addEventListener(MouseEvent.CLICK, klikattu2);
+			napukka2.addEventListener(MouseEvent.CLICK, klikattu);
 		}
 		
-		public function klikattu2(event:MouseEvent)
+		public function klikattu(event:MouseEvent)
 		{
-			
-		}
-		
-		public function Jee():void
-		{
-			trace("automaatti3");
 			automaatti3 = new Automaatti3();
 			addChild(automaatti3);
 		}

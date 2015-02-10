@@ -17,8 +17,6 @@ package
 		var automaatti5:Automaatti5;
 		var automaatti6:Automaatti6;
 		
-		var automaattiClip:String;
-		
 		public function Pankkiautomaatti(stage:Stage, passedClass:Engine)
 		{
 			mainClass = passedClass;
@@ -27,16 +25,18 @@ package
 			this.y = 0;
 
 			
-			napukka1.addEventListener(MouseEvent.CLICK, klikattu1);
+			napukka1.addEventListener(MouseEvent.CLICK, klikattu);
 		}
 		
-		public function klikattu1(event:MouseEvent)
+		public function klikattu(event:MouseEvent)
 		{
 			automaatti2 = new Automaatti2();
-			automaatti2.Jee();
+			addChild(automaatti2);
 		}
 		
 		
+		
+		// Hän ei suostunut toimiin :(((
 		/*public function klikattu(event:MouseEvent)
 		{
 			switch(automaattiClip)
